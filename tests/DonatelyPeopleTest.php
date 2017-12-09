@@ -10,7 +10,7 @@ class DonatelyPeopleTest extends PHPUnit_Framework_TestCase
         $stub->method('get')->willReturn('foo');
 
         $people = new DonatelyPeople($stub);
-        $this->assertEquals('foo', $people->getPeople([]));
+        $this->assertEquals('foo', $people->getPeopleList([]));
     }
 
     public function testPersonGet()

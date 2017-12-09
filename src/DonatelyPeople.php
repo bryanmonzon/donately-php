@@ -19,7 +19,7 @@ class DonatelyPeople
         $this->client = $client;
     }
 
-    public function getPeople($options)
+    public function getPeopleList($options)
     {
         return $this->client->get('admin/people', $options);
     }
