@@ -4,6 +4,22 @@ use Donately\DonatelyCampaigns;
 
 class DonatelyCampaignsTest extends PHPUnit_Framework_TestCase
 {
+    public function testCampaginCreate()
+    {
+        $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
+        $stub->method('post')->willReturn('foo');
+        $campaigns = new DonatelyCampaigns($stub);
+        $this->assertEquals('foo', $campaigns->create([]));
+    }
+
+    public function testCampaginUpdate()
+    {
+        $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
+        $stub->method('post')->willReturn('foo');
+        $campaigns = new DonatelyCampaigns($stub);
+        $this->assertEquals('foo', $campaigns->update([]));
+    }
+
     public function testCampaignsGet()
     {
         $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
