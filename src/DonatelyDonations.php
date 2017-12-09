@@ -20,8 +20,8 @@ class DonatelyDonations
     }
 
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getDonationsList($options)

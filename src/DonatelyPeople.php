@@ -20,8 +20,8 @@ class DonatelyPeople
     }
 
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getPeopleList($options)
@@ -30,10 +30,9 @@ class DonatelyPeople
     }
 
     /**
-     * @param  string $id      
-     * 
-     * @param  array  $options
-     * 
+     * @param string $id
+     * @param array  $options
+     *
      * @return array
      */
     public function getPerson($id, $options = [])
