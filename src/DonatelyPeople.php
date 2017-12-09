@@ -19,7 +19,6 @@ class DonatelyPeople
         $this->client = $client;
     }
 
-
     /**
      * @param array $options
      *
