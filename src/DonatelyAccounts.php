@@ -5,25 +5,37 @@ namespace Donately;
 class DonatelyAccounts
 {
     /**
-     * @var IntercomClient
+     * @var DonatelyClient
      */
     private $client;
 
     /**
-     * IntercomUsers constructor.
+     * DonatelyAccounts constructor.
      *
-     * @param IntercomClient $client
+     * @param DonatelyClient $client
      */
     public function __construct($client)
     {
         $this->client = $client;
     }
 
+    /**
+     * @param  array $options
+     * 
+     * @return array
+     */
     public function getAccountsList($options)
     {
         return $this->client->get('accounts', $options);
     }
 
+    /**
+     * @param  string $id      
+     * 
+     * @param  array  $options
+     * 
+     * @return array
+     */
     public function getAccount($id, $options = [])
     {
         $path = $this->accountPath($id);
