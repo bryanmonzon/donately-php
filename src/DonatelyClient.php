@@ -104,23 +104,26 @@ class DonatelyClient
     /**
      * Sends POST request to Donately API.
      *
-     * @param  string $endpoint
-     * @param  string $json
-     * @return mixed
+     * @param string $endpoint
+     * @param string $json
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function post($endpoint, $json)
     {
         $guzzleRequestOptions = $this->getGuzzleRequestOptions(
             [
-            'json' => $json,
-            'auth' => $this->getAuth(),
+            'json'    => $json,
+            'auth'    => $this->getAuth(),
             'headers' => [
-                'Accept' => 'application/json'
+                'Accept' => 'application/json',
             ],
             ]
         );
         $response = $this->http_client->request('POST', "https://$this->sub_domain.dntly.com/api/v1/$endpoint", $guzzleRequestOptions);
+
         return $this->handleResponse($response);
     }
 
