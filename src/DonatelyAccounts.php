@@ -19,7 +19,7 @@ class DonatelyAccounts
         $this->client = $client;
     }
 
-    public function getAccounts($options)
+    public function getAccountsList($options)
     {
         return $this->client->get('accounts', $options);
     }

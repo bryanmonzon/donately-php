@@ -34,7 +34,7 @@ class DonatelyClientTest extends PHPUnit_Framework_TestCase
         
         $client = new DonatelyClient('www', getenv('DONATELY_API_KEY'));
 
-        $client->accounts->getAccounts([]);
+        $client->accounts->getAccountsList([]);
 
         foreach ($container as $transaction) {
             $basic = $transaction['request']->getHeaders()['Authorization'][0];

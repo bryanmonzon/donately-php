@@ -10,7 +10,7 @@ class DonatelyAccountsTest extends PHPUnit_Framework_TestCase
         $stub->method('get')->willReturn('foo');
 
         $accounts = new DonatelyAccounts($stub);
-        $this->assertEquals('foo', $accounts->getAccounts([]));
+        $this->assertEquals('foo', $accounts->getAccountsList([]));
     }
 
     public function testAccountGet()
