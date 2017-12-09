@@ -28,22 +28,27 @@ class DonatelyClient
     protected $extraGuzzleRequestsOptions;
 
     /**
-     * @var DonatelyUsers
+     * @var DonatelyAccounts
      */
     public $accounts;
 
     /**
-     * @var DonatelyUsers
+     * @var DonatelyCampaigns
      */
     public $campaigns;
 
     /**
-     * @var DonatelyUsers
+     * @var DonatelyFundraisers
+     */
+    public $fundraisers;
+
+    /**
+     * @var DonatelyPeople
      */
     public $people;
 
     /**
-     * @var DonatelyUsers
+     * @var DonatelyDonations
      */
     public $donations;
 
@@ -59,6 +64,7 @@ class DonatelyClient
         $this->campaigns = new DonatelyCampaigns($this);
         $this->people = new DonatelyPeople($this);
         $this->donations = new DonatelyDonations($this);
+        $this->fundraisers = new DonatelyFundraisers($this);
 
         $this->api_key = $api_key;
         $this->sub_domain = $sub_domain;
