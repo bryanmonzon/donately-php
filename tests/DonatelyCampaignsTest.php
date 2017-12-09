@@ -10,7 +10,7 @@ class DonatelyCampaignsTest extends PHPUnit_Framework_TestCase
         $stub->method('get')->willReturn('foo');
 
         $campaigns = new DonatelyCampaigns($stub);
-        $this->assertEquals('foo', $campaigns->getCampaigns([]));
+        $this->assertEquals('foo', $campaigns->getCampaignsList([]));
     }
 
     public function testCampaignGet()

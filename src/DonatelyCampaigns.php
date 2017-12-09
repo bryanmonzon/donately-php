@@ -19,7 +19,7 @@ class DonatelyCampaigns
         $this->client = $client;
     }
 
-    public function getCampaigns($options)
+    public function getCampaignsList($options)
     {
         return $this->client->get('admin/campaigns', $options);
     }
