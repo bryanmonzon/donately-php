@@ -67,7 +67,7 @@ class DonatelyClient
         $this->fundraisers = new DonatelyFundraisers($this);
 
         $this->api_key = $api_key;
-        $this->sub_domain = $sub_domain;
+        $this->sub_domain = $this->getSubdomain();
         $this->extraGuzzleRequestsOptions = $extraGuzzleRequestsOptions;
     }
 
@@ -94,6 +94,34 @@ class DonatelyClient
     public function getApiKey()
     {
         return 'Basic '.base64_encode($this->api_key);
+    }
+
+    public function getSubdomain()
+    {
+        return getenv('DONATELY_SUBDOMAIN');
+    }
+
+    /**
+     * Sends POST request to Intercom API.
+     *
+     * @param  string $endpoint
+     * @param  string $json
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function post($endpoint, $json)
+    {
+        $guzzleRequestOptions = $this->getGuzzleRequestOptions(
+            [
+            'json' => $json,
+            'auth' => $this->getAuth(),
+            'headers' => [
+                'Accept' => 'application/json'
+            ],
+            ]
+        );
+        $response = $this->http_client->request('POST', "https://$this->sub_domain.dntly.com/api/v1/$endpoint", $guzzleRequestOptions);
+        return $this->handleResponse($response);
     }
 
     /**
