@@ -19,7 +19,7 @@ class DonatelyDonations
         $this->client = $client;
     }
 
-    public function getDonations($options)
+    public function getDonationsList($options)
     {
         return $this->client->get('donations', $options);
     }

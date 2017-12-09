@@ -10,7 +10,7 @@ class DonatelyDonationsTest extends PHPUnit_Framework_TestCase
         $stub->method('get')->willReturn('foo');
 
         $donations = new DonatelyDonations($stub);
-        $this->assertEquals('foo', $donations->getDonations([]));
+        $this->assertEquals('foo', $donations->getDonationsList([]));
     }
 
     // public function testPersonGet()
