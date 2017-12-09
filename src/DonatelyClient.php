@@ -102,7 +102,7 @@ class DonatelyClient
     }
 
     /**
-     * Sends POST request to Intercom API.
+     * Sends POST request to Donately API.
      *
      * @param  string $endpoint
      * @param  string $json
