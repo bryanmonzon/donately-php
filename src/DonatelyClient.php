@@ -67,7 +67,7 @@ class DonatelyClient
         $this->fundraisers = new DonatelyFundraisers($this);
 
         $this->api_key = $api_key;
-        $this->sub_domain = $this->getSubdomain();
+        $this->sub_domain = $sub_domain;
         $this->extraGuzzleRequestsOptions = $extraGuzzleRequestsOptions;
     }
 
@@ -94,11 +94,6 @@ class DonatelyClient
     public function getApiKey()
     {
         return 'Basic '.base64_encode($this->api_key);
-    }
-
-    public function getSubdomain()
-    {
-        return getenv('DONATELY_SUBDOMAIN');
     }
 
     /**
