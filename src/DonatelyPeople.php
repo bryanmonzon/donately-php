@@ -5,7 +5,7 @@ namespace Donately;
 class DonatelyPeople
 {
     /**
-     * @var IntercomClient
+     * @var DonatelyClient
      */
     private $client;
 
