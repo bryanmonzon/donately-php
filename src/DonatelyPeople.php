@@ -10,20 +10,31 @@ class DonatelyPeople
     private $client;
 
     /**
-     * IntercomUsers constructor.
+     * DonatelyPeople constructor.
      *
-     * @param IntercomClient $client
+     * @param DonatelyClient $client
      */
     public function __construct($client)
     {
         $this->client = $client;
     }
 
+    /**
+     * 
+     * @param  array $options
+     * @return array
+     */
     public function getPeopleList($options)
     {
         return $this->client->get('admin/people', $options);
     }
 
+    /**
+     * 
+     * @param  string $id      
+     * @param  array  $options
+     * @return array
+     */
     public function getPerson($id, $options = [])
     {
         $path = $this->peoplePath($id);
