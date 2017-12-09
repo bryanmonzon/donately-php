@@ -15,3 +15,5 @@ phpunit.phar
 # Extras
 build/
 *.swp
+
+.env
