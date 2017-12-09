@@ -6,6 +6,11 @@ class DonatelyAccountsTest extends PHPUnit_Framework_TestCase
 {
     public function testAccountsGet()
     {
+        $DONATELY_API_KEY = getenv('DONATELY_API_KEY');
+        if (!$DONATELY_API_KEY) {
+            $this->markTestSkipped('No API key in ENV');
+        }
+
         $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
         $stub->method('get')->willReturn('foo');
 
@@ -15,6 +20,11 @@ class DonatelyAccountsTest extends PHPUnit_Framework_TestCase
 
     public function testAccountGet()
     {
+        $DONATELY_API_KEY = getenv('DONATELY_API_KEY');
+        if (!$DONATELY_API_KEY) {
+            $this->markTestSkipped('No API key in ENV');
+        }
+        
         $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
         $stub->method('get')->willReturn('foo');
 

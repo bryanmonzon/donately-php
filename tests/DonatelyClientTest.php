@@ -20,6 +20,11 @@ class DonatelyClientTest extends PHPUnit_Framework_TestCase
 
     public function testBasicClient()
     {
+        $DONATELY_API_KEY = getenv('DONATELY_API_KEY');
+        if (!$DONATELY_API_KEY) {
+            $this->markTestSkipped('No API key in ENV');
+        }
+
         $mock = new MockHandler(
             [
             new Response(200, ['X-Foo' => 'Bar'], '{"foo":"bar"}'),
