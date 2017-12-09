@@ -14,7 +14,7 @@ class DonatelyPeopleTest extends PHPUnit_Framework_TestCase
     }
 
     public function testPersonGet()
-    {     
+    {
         $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
         $stub->method('get')->willReturn('foo');
 
