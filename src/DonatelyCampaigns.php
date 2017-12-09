@@ -20,8 +20,8 @@ class DonatelyCampaigns
     }
 
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getCampaignsList($options)
@@ -29,10 +29,9 @@ class DonatelyCampaigns
         return $this->client->get('admin/campaigns', $options);
     }
 
-
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getCampaign($id, $options = [])

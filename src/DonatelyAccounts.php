@@ -20,8 +20,8 @@ class DonatelyAccounts
     }
 
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getAccountsList($options)
@@ -30,10 +30,9 @@ class DonatelyAccounts
     }
 
     /**
-     * @param  string $id      
-     * 
-     * @param  array  $options
-     * 
+     * @param string $id
+     * @param array  $options
+     *
      * @return array
      */
     public function getAccount($id, $options = [])

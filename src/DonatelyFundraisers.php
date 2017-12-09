@@ -20,8 +20,8 @@ class DonatelyFundraisers
     }
 
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getFundraisersList($options)
@@ -29,10 +29,9 @@ class DonatelyFundraisers
         return $this->client->get('fundraisers', $options);
     }
 
-
     /**
-     * @param  array $options
-     * 
+     * @param array $options
+     *
      * @return array
      */
     public function getFundraiser($id, $options = [])
