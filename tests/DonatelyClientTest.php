@@ -11,8 +11,8 @@ class DonatelyClientTest extends PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $env_file_path = __DIR__ . '/../';
-        if (file_exists($env_file_path . '.env')) {
+        $env_file_path = __DIR__.'/../';
+        if (file_exists($env_file_path.'.env')) {
             $dotenv = new Dotenv\Dotenv($env_file_path);
             $dotenv->load();
         }
@@ -31,7 +31,7 @@ class DonatelyClientTest extends PHPUnit_Framework_TestCase
         $stack->push($history);
 
         $http_client = new Client(['handler' => $stack]);
-        
+
         $client = new DonatelyClient('www', getenv('DONATELY_API_KEY'));
 
         $client->accounts->getAccounts([]);
