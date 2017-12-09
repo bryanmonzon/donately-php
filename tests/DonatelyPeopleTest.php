@@ -18,7 +18,7 @@ class DonatelyPeopleTest extends PHPUnit_Framework_TestCase
         $stub = $this->getMockBuilder('Donately\DonatelyClient')->disableOriginalConstructor()->getMock();
         $stub->method('get')->willReturn('foo');
 
-        $people = new DonatelyPeople($stub);
-        $this->assertEquals('foo', $people->getPerson('per_3f76f0e81754', []));
+        $person = new DonatelyPeople($stub);
+        $this->assertEquals('foo', $person->getPerson('per_3f76f0e81754', []));
     }
 }
