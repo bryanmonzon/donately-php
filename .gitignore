@@ -8,10 +8,6 @@
 composer.phar
 /vendor
 
-# PhpUnit
-phpunit.phar
-/phpunit.xml
-
 # Extras
 build/
 *.swp
