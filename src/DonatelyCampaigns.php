@@ -40,7 +40,7 @@ class DonatelyCampaigns
      */
     public function update($options)
     {
-        return $this->client->post($options);
+        return $this->create($options);
     }
 
     /**
