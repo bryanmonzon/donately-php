@@ -22,9 +22,11 @@ class DonatelyCampaigns
     /**
      * Creates a campaign.
      *
-     * @param  array $options
-     * @return mixed
+     * @param array $options
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function create($options)
     {
@@ -35,9 +37,11 @@ class DonatelyCampaigns
      * Updates a campaign. Basically a wrapper
      * for the create method since they both post
      *
-     * @param  array $options
-     * @return mixed
+     * @param array $options
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     *
+     * @return mixed
      */
     public function update($options)
     {
