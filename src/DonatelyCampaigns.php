@@ -32,7 +32,8 @@ class DonatelyCampaigns
     }
 
     /**
-     * Updates a campaign.
+     * Updates a campaign. Basically a wrapper
+     * for the create method since they both post
      *
      * @param  array $options
      * @return mixed
