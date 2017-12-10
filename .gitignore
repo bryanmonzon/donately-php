@@ -5,7 +5,6 @@
 .idea
 
 # Composer
-composer.phar
 /vendor
 
 # Extras
